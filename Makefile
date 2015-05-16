@@ -140,3 +140,17 @@ install-jar: unix-$(UNIXVER).jar cgi-$(CGIVER).jar debug-enable-$(DEBUGVER).jar 
 	ln -sf hexdump-$(HEXVER).jar $(DESTDIR)$(JARDIR)/hexdump.jar
 
 install: install-native install-jar
+
+uninstall-native:
+	@rm -rfv $(DESTDIR)$(LIBDIR)/libcgi-java.so
+	@rm -rfv $(DESTDIR)$(LIBDIR)/libunix-java.so
+
+uninstall-jar:
+	@rm -rfv $(DESTDIR)$(JARDIR)/debug-enable*.jar
+	@rm -rfv $(DESTDIR)$(JARDIR)/debug-disable*.jar
+	@rm -rfv $(DESTDIR)$(JARDIR)/unix*.jar
+	@rm -rfv $(DESTDIR)$(JARDIR)/cgi*.jar
+	@rm -rfv $(DESTDIR)$(JARDIR)/io*.jar
+	@rm -rfv $(DESTDIR)$(JARDIR)/hexdump*.jar
+
+uninstall: uninstall-native uninstall-jar
