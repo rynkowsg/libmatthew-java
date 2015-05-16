@@ -1,0 +1,9 @@
+# Makefile product files
+.classes
+.disabledebug
+Manifest
+classes/
+cgi-java.h
+unix-java.h
+*.jar
+*.so
